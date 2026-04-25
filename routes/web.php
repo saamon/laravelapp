@@ -7,5 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello',[HelloController::class,'index']);
+Route::controller(HelloController::class)->group(function () {
+    Route::get('/hello', 'list')->name('hello.list');
+});
 
