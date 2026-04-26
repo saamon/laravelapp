@@ -38,7 +38,7 @@ class BookController extends Controller
      */
     public function show(int $book)
     {
-        $b = Book::find($book);
+        $b = Book::findOrFail($book);
         return view('books.show', [
             'book' => $b,
         ]);
