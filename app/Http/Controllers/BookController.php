@@ -22,7 +22,9 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('books.create', [
+            'book' => new Book(),
+        ]);
     }
 
     /**
@@ -36,11 +38,10 @@ class BookController extends Controller
     /**
      * 一覧画面表示
      */
-    public function show(int $book)
+    public function show(Book $book)
     {
-        $b = Book::findOrFail($book);
         return view('books.show', [
-            'book' => $b,
+            'book' => $book,
         ]);
     }
 

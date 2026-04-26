@@ -14,4 +14,10 @@ class Book extends Model
             'published' => 'datetime',
         ];
     }
+
+    protected $attributes = [
+        'price' => 300,
+        'publisher' => 'テスト本屋',
+        'sample' => false,
+    ];
 }
