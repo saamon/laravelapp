@@ -20,4 +20,15 @@ class Book extends Model
         'publisher' => 'テスト本屋',
         'sample' => false,
     ];
+
+    // protected:そのクラス自身 + 子クラスから触れる
+    // fillable：一括代入で変更してよいカラム一覧
+    protected $fillable = [
+        'isbn',
+        'title',
+        'price',
+        'publisher',
+        'published',
+        'sample',
+    ];
 }
