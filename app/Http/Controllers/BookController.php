@@ -53,7 +53,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('books.edit', ['book' => $book]);
     }
 
     /**
@@ -61,7 +61,11 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        // update
+        // リクエストから項目を取り出す→入力値をモデルに反映
+        $book->fill($request->only(['isbn', 'title', 'price', 'publisher', 'published', 'sample']))
+            ->save();
+        return to_route('books.index');
     }
 
     /**
