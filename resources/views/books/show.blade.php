@@ -37,7 +37,12 @@
             {{ $book->sample ? 'あり':'なし' }}
         </dd>
     </dl>
-    <div>
-        <a href="{{ route('books.index', $book) }}" class="btn btn-secondary">一覧に戻る</a>
-    </div>
+    <form method="post" action="{{ route('books.destroy',$book )}}">
+        @csrf
+        @method('DELETE')
+        <div>
+            <a href="{{ route('books.index', $book) }}" class="btn btn-secondary">一覧に戻る</a>
+        </div>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('削除しますか？')">削除</button>
+    </form>
 </x-layout>
