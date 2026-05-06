@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\QueryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,3 +14,6 @@ Route::controller(HelloController::class)->group(function () {
 });
 
 Route::resource('books', BookController::class);
+
+// nameはblade側で参照(URLを書かずに使用できる)
+Route::get('/query/where', [QueryController::class, 'where'])->name('query.where');
