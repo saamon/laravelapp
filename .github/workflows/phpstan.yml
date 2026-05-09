@@ -1,0 +1,32 @@
+name: PHPStan
+
+# Pull Request と main ブランチへの push 時に静的解析を実行する。
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ローカル環境に合わせた PHP を用意する。PHPStan ではカバレッジ不要なので無効化する。
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          coverage: none
+
+      # composer.lock に固定された依存関係をインストールする。
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      # composer.json の scripts.phpstan を使って PHPStan を実行する。
+      - name: Run PHPStan
+        run: composer phpstan
