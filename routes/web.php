@@ -19,3 +19,4 @@ Route::resource('books', BookController::class);
 Route::get('/query/where', [QueryController::class, 'where'])->name('query.where');
 // 更新用
 Route::patch('/query/update-all', [QueryController::class, 'updateAll'])->name('query.update-all');
+Route::get('/trans', [QueryController::class, 'trans'])->name('query.trans');
