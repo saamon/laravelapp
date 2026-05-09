@@ -37,15 +37,6 @@ class QueryController extends Controller
                     'published' => '2026-01-01',
                     'sample' => true,
                 ]);
-                throw new RuntimeException('処理中に問題が発生');
-                Book::create([
-                    'isbn' => '978-4-7981-6890-4',
-                    'title' => 'Book3',
-                    'price' => 3000,
-                    'publisher' => '翔泳社',
-                    'published' => '2026-02-01',
-                    'sample' => false,
-                ]);
             });
         } catch (RuntimeException $e) {
             return 'ロールバックされました:' . $e->getMessage();
