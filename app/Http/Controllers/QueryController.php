@@ -39,7 +39,7 @@ class QueryController extends Controller
                 ]);
             });
         } catch (RuntimeException $e) {
-            return 'ロールバックされました:' . $e->getMessage();
+            return 'ロールバックされました:'.$e->getMessage();
         }
 
         return '処理が完了しました';
