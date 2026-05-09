@@ -33,9 +33,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $book = new Book();
-        $book->fill($request->only(['isbn', 'title', 'price', 'publisher', 'published']))
-            ->save(); // テーブルに保存する
+        Book::create($request->only(['isbn', 'title', 'price', 'publisher', 'published']));
         return to_route('books.index');
     }
 

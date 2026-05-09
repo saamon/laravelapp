@@ -5,6 +5,14 @@
             新規登録
         </a>
     </p>
+    <form method="post" action="{{ route('query.update-all') }}">
+        @csrf
+        @method('PATCH')
+
+        <button type="submit" class="btn btn-warning">
+            SBクリエイティブの価格を10%引きにする
+        </button>
+    </form>
     <table class="table">
         <thread>
             <tr>

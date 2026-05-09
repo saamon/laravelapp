@@ -17,3 +17,5 @@ Route::resource('books', BookController::class);
 
 // nameはblade側で参照(URLを書かずに使用できる)
 Route::get('/query/where', [QueryController::class, 'where'])->name('query.where');
+// 更新用
+Route::patch('/query/update-all', [QueryController::class, 'updateAll'])->name('query.update-all');
