@@ -24,7 +24,7 @@ class BookController extends Controller
     public function create()
     {
         return view('books.create', [
-            'book' => new Book(),
+            'book' => new Book,
         ]);
     }
 
@@ -34,6 +34,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         Book::create($request->only(['isbn', 'title', 'price', 'publisher', 'published']));
+
         return to_route('books.index');
     }
 
@@ -64,6 +65,7 @@ class BookController extends Controller
         // リクエストから項目を取り出す→入力値をモデルに反映
         $book->fill($request->only(['isbn', 'title', 'price', 'publisher', 'published', 'sample']))
             ->save();
+
         return to_route('books.index');
     }
 
@@ -73,6 +75,7 @@ class BookController extends Controller
     public function destroy(Book $book): RedirectResponse
     {
         $book->delete();
+
         return to_route('books.index');
     }
 }
