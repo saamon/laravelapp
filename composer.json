@@ -17,6 +17,7 @@
         "barryvdh/laravel-ide-helper": "^3.7",
         "fakerphp/faker": "^1.23",
         "fruitcake/laravel-debugbar": "^4.2",
+        "larastan/larastan": "^3.0",
         "laravel/boost": "^2.0",
         "laravel/pail": "^1.2.5",
         "laravel/pint": "^1.27",
@@ -72,6 +73,9 @@
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ],
+        "phpstan": [
+            "phpstan analyse"
         ]
     },
     "extra": {
