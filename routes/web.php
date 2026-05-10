@@ -23,3 +23,4 @@ Route::patch('/query/update-all', [QueryController::class, 'updateAll'])->name('
 Route::get('/trans', [QueryController::class, 'trans'])->name('query.trans');
 
 Route::get('/relation/belong', [RelationController::class, 'belong'])->name('relation.belong');
+Route::get('/relation/has-many', [RelationController::class, 'hasMany'])->name('relation.has-many');

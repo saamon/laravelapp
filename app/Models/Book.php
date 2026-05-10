@@ -3,9 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Book extends Model
 {
+    // 本からレビュー情報を取得する
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
     // フィールド型の変換型を宣言
     // datetimeにキャストすることで、日付形式を変換できる
     protected function casts(): array
