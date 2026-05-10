@@ -30,12 +30,12 @@ class QueryController extends Controller
         try {
             DB::transaction(function () {
                 Book::create([
-                    'isbn' => '978-4-7981-6890-4',
-                    'title' => 'Book2',
-                    'price' => 2000,
+                    'isbn'      => '978-4-7981-6890-4',
+                    'title'     => 'Book2',
+                    'price'     => 2000,
                     'publisher' => '翔泳社',
                     'published' => '2026-01-01',
-                    'sample' => true,
+                    'sample'    => true,
                 ]);
             });
         } catch (RuntimeException $e) {

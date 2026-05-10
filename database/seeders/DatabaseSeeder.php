@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             BooksTableSeeder::class,
         ]);
         User::factory()->create([
-            'name' => 'Test User',
+            'name'  => 'Test User',
             'email' => 'test@example.com',
         ]);
     }

@@ -11,7 +11,7 @@ class HelloController extends Controller
     public function index(Request $request, Response $response)
     {
         return view('hello.index', [
-            'url' => $request->url(),
+            'url'    => $request->url(),
             'status' => $response->status(),
         ]);
     }

@@ -16,9 +16,9 @@ class Book extends Model
     }
 
     protected $attributes = [
-        'price' => 300,
+        'price'     => 300,
         'publisher' => 'テスト本屋',
-        'sample' => false,
+        'sample'    => false,
     ];
 
     // protected:そのクラス自身 + 子クラスから触れる

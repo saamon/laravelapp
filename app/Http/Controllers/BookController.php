@@ -24,7 +24,7 @@ class BookController extends Controller
     public function create()
     {
         return view('books.create', [
-            'book' => new Book,
+            'book' => new Book(),
         ]);
     }
 
@@ -39,7 +39,7 @@ class BookController extends Controller
     }
 
     /**
-     * 一覧画面表示
+     * 一覧画面表示.
      */
     public function show(Book $book)
     {
