@@ -12,6 +12,7 @@ class Book extends Model
     {
         return $this->hasMany(Review::class);
     }
+
     // フィールド型の変換型を宣言
     // datetimeにキャストすることで、日付形式を変換できる
     protected function casts(): array
