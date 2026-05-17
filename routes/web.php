@@ -24,3 +24,6 @@ Route::get('/trans', [QueryController::class, 'trans'])->name('query.trans');
 
 Route::get('/relation/belong', [RelationController::class, 'belong'])->name('relation.belong');
 Route::get('/relation/has-many', [RelationController::class, 'hasMany'])->name('relation.has-many');
+Route::get('/relation/with', [RelationController::class, 'with'])->name('relation.with');
+Route::get('/relation/with-count', [RelationController::class, 'withCount'])->name('relation.with-count');
+Route::get('/relation/create', [RelationController::class, 'create'])->name('relation.create');

@@ -40,6 +40,7 @@ return [
     */
 
     'debug' => (bool) env('APP_DEBUG', false),
+    'editor' => env('APP_EDITOR', 'phpstorm'),
 
     /*
     |--------------------------------------------------------------------------
