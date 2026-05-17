@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Book extends Model
 {
     use HasFactory;
+
     // 本からレビュー情報を取得する
     public function reviews(): HasMany
     {

@@ -15,7 +15,7 @@ class BookCategorySeeder extends Seeder
     {
         $categories = Category::all();
 
-        Book::all()->each(function(Book $book) use ($categories) {
+        Book::all()->each(function (Book $book) use ($categories) {
             $count = min($categories->count(), random_int(1, 3));
             $categoryIds = $categories->random($count)->pluck('id')->all();
 

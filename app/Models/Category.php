@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Category extends Model
 {
     use HasFactory;
+
     // カテゴリーからbookを取得する
     // 複数件だからメソッドも複数形
     public function books(): BelongsToMany

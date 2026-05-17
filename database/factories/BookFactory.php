@@ -23,7 +23,7 @@ class BookFactory extends Factory
             'price' => $this->faker->numberBetween(2000, 5000),
             'publisher' => $this->faker->randomElement(
                 [
-                    'SBクリエイティブ','技術評論者','翔泳社','日経BP','森北出版'
+                    'SBクリエイティブ', '技術評論者', '翔泳社', '日経BP', '森北出版',
                 ]
             ),
             'published' => $this->faker->dateTimeBetween('-5 years', 'now'),

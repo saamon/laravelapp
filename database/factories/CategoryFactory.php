@@ -20,10 +20,10 @@ class CategoryFactory extends Factory
         return [
             'name' => $this->faker->randomElement(
                 [
-                    'PHP','Laravel','JavaScript','Database', 'Web開発',
+                    'PHP', 'Laravel', 'JavaScript', 'Database', 'Web開発',
 
                 ]
-            )
+            ),
         ];
     }
 }
