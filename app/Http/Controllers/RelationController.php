@@ -27,6 +27,7 @@ class RelationController extends Controller
     public function with()
     {
         $books = Book::with('reviews')->get();
+
         return view('relation.with', [
             'books' => $books,
         ]);
@@ -35,6 +36,7 @@ class RelationController extends Controller
     public function withCount()
     {
         $books = Book::withCount('reviews')->get();
+
         return view('relation.withcount', [
             'books' => $books,
         ]);
@@ -49,6 +51,7 @@ class RelationController extends Controller
             'status' => 'publish',
             'book_id' => 2,
         ]);
+
         return 'レビューを保存しました';
     }
 }
