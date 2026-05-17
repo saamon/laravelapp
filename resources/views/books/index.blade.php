@@ -1,4 +1,14 @@
 {{--テンプレートに埋め込み--}}
+@php
+    $colors = [
+        'PHP' => 'bg-primary',
+        'Laravel' => 'bg-danger',
+        'JavaScript' => 'bg-warning text-dark',
+        'Database' => 'bg-success',
+        'Web開発' => 'bg-info text-dark',
+    ];
+@endphp
+
 <x-layout>
     <p>
         <a href="{{ route('books.create') }}" class="btn btn-primary">
@@ -22,6 +32,9 @@
                 <th>出版社</th>
                 <th>刊行日</th>
                 <th>サンプル</th>
+                <th>操作</th>
+                <th>レビュー数</th>
+                <th>カテゴリー</th>
             </tr>
         </thread>
         <tbody>
@@ -36,6 +49,16 @@
                 <td>
                     <a href="{{ route('books.show',$book->id) }}">詳細</a>
                     <a href="{{ route('books.edit',$book->id) }}">編集</a>
+                </td>
+                <td>{{$book->reviews->count()}} 件</td>
+                <td>
+                    @forelse($book->categories as $category)
+                        <span class="badge {{ $colors[$category->name] ?? 'bg-secondary' }}">
+                            {{$category->name}}
+                        </span>
+                    @empty
+                        <span class="text-muted">未設定</span>
+                    @endforelse
                 </td>
             </tr>
         @endforeach
