@@ -8,6 +8,7 @@
         'Web開発' => 'bg-info text-dark',
     ];
 @endphp
+@vite('resources/js/app.js')
 
 <x-layout>
     <p>
