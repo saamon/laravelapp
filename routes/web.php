@@ -5,9 +5,16 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\QueryController;
 use App\Http\Controllers\RelationController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/inertia', function () {
+    return Inertia::render('Home', [
+        'message' => 'Hello, Inertia!',
+    ]);
 });
 
 Route::controller(HelloController::class)->group(function () {
