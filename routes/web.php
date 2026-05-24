@@ -21,6 +21,10 @@ Route::controller(HelloController::class)->group(function () {
     Route::get('/hello', 'list')->name('hello.list');
 });
 
+Route::get('/books-react', function () {
+    return Inertia::render('Books/Index');
+});
+
 Route::resource('books', BookController::class);
 
 // nameはblade側で参照(URLを書かずに使用できる)
