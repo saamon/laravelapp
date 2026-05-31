@@ -14,6 +14,7 @@ class ReviewController extends Controller
             'book' => $book,
         ]);
     }
+
     public function store(ReviewRequest $request, Book $book): RedirectResponse
     {
         $book->reviews()->create([
