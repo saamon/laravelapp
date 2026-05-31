@@ -3,6 +3,15 @@
         @csrf
         {{-- postだけど更新用だからpatch --}}
         @method('PATCH')
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @include('books.form')
         <div class="form-group">
             <button type="submit" class="btn btn-primary">更新</button>

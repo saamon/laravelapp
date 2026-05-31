@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use App\Models\Book;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
@@ -31,10 +31,9 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BookRequest $request): RedirectResponse
     {
-        Book::create($request->only(['isbn', 'title', 'price', 'publisher', 'published']));
-
+        Book::create($request->validated());
         return to_route('books.index');
     }
 
@@ -59,12 +58,11 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Book $book): RedirectResponse
+    public function update(BookRequest $request, Book $book): RedirectResponse
     {
         // update
         // リクエストから項目を取り出す→入力値をモデルに反映
-        $book->fill($request->only(['isbn', 'title', 'price', 'publisher', 'published', 'sample']))
-            ->save();
+        $book->update($request->validated());
 
         return to_route('books.index');
     }

@@ -18,7 +18,7 @@
 <div class="form-group">
     <label for="published" class="control-label">刊行日：</label>
     <input id="published" type="date" name="published" class="form-control"
-           value="{{ old('published',$book->published)}}">
+           value="{{ old('published',$book->published?->toDateString())}}">
 </div>
 <div class="form-group">
     <label for="sample" class="control-label">サンプルコード：</label>
