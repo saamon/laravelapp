@@ -50,6 +50,7 @@
                 <td>
                     <a href="{{ route('books.show',$book->id) }}">詳細</a>
                     <a href="{{ route('books.edit',$book->id) }}">編集</a>
+                    <a href="{{ route('books.reviews.create',$book) }}">レビュー投稿</a>
                 </td>
                 <td>{{$book->reviews->count()}} 件</td>
                 <td>

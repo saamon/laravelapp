@@ -4,6 +4,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\QueryController;
 use App\Http\Controllers\RelationController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -38,3 +39,7 @@ Route::get('/relation/has-many', [RelationController::class, 'hasMany'])->name('
 Route::get('/relation/with', [RelationController::class, 'with'])->name('relation.with');
 Route::get('/relation/with-count', [RelationController::class, 'withCount'])->name('relation.with-count');
 Route::get('/relation/create', [RelationController::class, 'create'])->name('relation.create');
+
+// レビュー
+Route::post('/books/{book}/reviews', [ReviewController::class, 'store'])->name('books.reviews.store');
+Route::get('/books/{book}/reviews/create', [ReviewController::class, 'create'])->name('books.reviews.create');
