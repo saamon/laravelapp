@@ -24,3 +24,8 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/.ai/mcp/mcp.json
+/package.xml
+/config/sanctum.php
+/.agents/skills/tailwindcss-development/SKILL.md
+/.junie/skills/tailwindcss-development/SKILL.md

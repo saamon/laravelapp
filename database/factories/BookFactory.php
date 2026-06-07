@@ -30,4 +30,11 @@ class BookFactory extends Factory
             'sample' => $this->faker->boolean(),
         ];
     }
+
+    public function sample(): static
+    {
+        return $this->state(fn (array $attributes): array => [
+            'sample' => true,
+        ]);
+    }
 }
