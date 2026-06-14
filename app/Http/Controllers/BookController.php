@@ -13,8 +13,9 @@ class BookController extends Controller
      */
     public function index()
     {
+        $books = Book::withIndexRelations()->get();
         return view('books.index', [
-            'books' => Book::withIndexRelations()->get(),
+            'books' => $books,
         ]);
     }
 
